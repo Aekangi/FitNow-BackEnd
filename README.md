@@ -14,7 +14,9 @@ FitNow is designed for those individuals that would like to get fit through exer
 
 ### Technologies Used
 
-### ![Entity Relationship Diagram](assets/FitNow-ERD.png)
+### Entity Relationship Diagram
+
+![](assets/FitNow-ERD.png)
 
 ### Future Updates
 
