@@ -1,27 +1,37 @@
 # FitNow-BackEnd
 
-### [Aekangi Patel LinkedIn](https://www.linkedin.com/in/aekangipatel/)
+## Date: 12/7/2022
 
-### [FitNow-FrontEnd](https://github.com/Aekangi/FitNow-FrontEnd)
+#### By: Aekangi Patel [LinkedIn](https://www.linkedin.com/in/aekangipatel/) | [FitNow-FrontEnd](https://github.com/Aekangi/FitNow-FrontEnd)
 
-## [FitNow App]()
+### [FitNow App]()
 
-## Description
+---
+
+### **_Description_**
 
 FitNow is designed for those individuals that would like to get fit through exercises and diet plans. There comes a point where you would like to go on a diet but you get confused on what to eat. Worry no more! This app has well designed diet plans for each day of the week to take that confusion away.
 
-## Getting Started
+---
 
-### Technologies Used
+### **_Getting Started_**
 
-### Entity Relationship Diagram
+---
+
+### **_Technologies Used_**
+
+---
+
+### **_Entity Relationship Diagram_**
 
 ![](assets/FitNow-ERD.png)
 
-### Future Updates
+---
 
-#### Work Progress
+#### **_Work Progress_**
 
 [Trello Board](https://trello.com/b/A2NWRgj5/fitnow)
+
+---
 
 #### Credits
