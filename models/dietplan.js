@@ -8,7 +8,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      DietPlan.belongsToMany(models.User, {
+        as: 'user_list',
+        through: models.UserDietPlan,
+        foreignKey: 'dietPlanId'
+      })
     }
   }
   DietPlan.init(
@@ -57,7 +61,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'DietPlan',
-      tableName: 'dietplans'
+      tableName: 'diet_plans'
     }
   )
   return DietPlan
