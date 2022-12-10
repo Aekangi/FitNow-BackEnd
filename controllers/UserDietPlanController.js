@@ -86,6 +86,20 @@ const GetAllUsersAndDietPlansByDietPlanId = async (req, res) => {
     throw error
   }
 }
+const CreateUserDietPlan = async (req, res) => {
+  try {
+    const userId = parseInt(req.params.user_id)
+    const dietPlanId = parseInt(req.params.diet_plan_id)
+    const userDietPlan = await UserDietPlan.create({
+      userId,
+      dietPlanId,
+      ...req.body
+    })
+    res.send(userDietPlan)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   GetAllUserDietPlanWithPk,
@@ -93,5 +107,6 @@ module.exports = {
   GetAllUsersAndDietPlans,
   GetAllUsersAndDietPlansById,
   GetAllUsersAndDietPlansByUserId,
-  GetAllUsersAndDietPlansByDietPlanId
+  GetAllUsersAndDietPlansByDietPlanId,
+  CreateUserDietPlan
 }
