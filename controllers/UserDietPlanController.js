@@ -50,10 +50,29 @@ const GetAllUsersAndDietPlansById = async (req, res) => {
     throw error
   }
 }
+const GetAllUsersAndDietPlansByUserId = async (req, res) => {
+  try {
+    const userCreatedId = parseInt(req.params.user_created_id)
+    const userDietPlanByUserId = await User.findAll({
+      where: { id: userCreatedId },
+      include: [
+        {
+          model: DietPlan,
+          as: 'dietPlan_list',
+          through: { attributes: [] }
+        }
+      ]
+    })
+    res.send(userDietPlanByUserId)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   GetAllUserDietPlanWithPk,
   GetAllUserDietPlans,
   GetAllUsersAndDietPlans,
-  GetAllUsersAndDietPlansById
+  GetAllUsersAndDietPlansById,
+  GetAllUsersAndDietPlansByUserId
 }
