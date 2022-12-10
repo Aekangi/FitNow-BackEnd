@@ -39,9 +39,21 @@ const GetAllUsersAndDietPlans = async (req, res) => {
     throw error
   }
 }
+const GetAllUsersAndDietPlansById = async (req, res) => {
+  try {
+    const userDietPlanId = parseInt(req.params.user_diet_plan_id)
+    const userDietPlan = await UserDietPlan.findAll({
+      where: { id: userDietPlanId }
+    })
+    res.send(userDietPlan)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   GetAllUserDietPlanWithPk,
   GetAllUserDietPlans,
-  GetAllUsersAndDietPlans
+  GetAllUsersAndDietPlans,
+  GetAllUsersAndDietPlansById
 }
