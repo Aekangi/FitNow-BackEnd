@@ -100,6 +100,29 @@ const CreateUserExercise = async (req, res) => {
     throw error
   }
 }
+const UpdateUserExerciseById = async (req, res) => {
+  try {
+    const userExerciseId = parseInt(req.params.user_exercise_id)
+    const updatedUserExercise = await UserExercise.update(req.body, {
+      where: { id: userExerciseId },
+      returning: true
+    })
+    res.send(updatedUserExercise)
+  } catch (error) {
+    throw error
+  }
+}
+const DeleteUserExerciseById = async (req, res) => {
+  try {
+    const userExerciseId = parseInt(req.params.user_exercise_id)
+    await UserExercise.destroy({ where: { id: userExerciseId } })
+    res.send({
+      message: `Deleted user exercise with an id of ${userExerciseId}`
+    })
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   GetAllUserExercisesWithPk,
@@ -108,5 +131,7 @@ module.exports = {
   GetAllUsersAndExercisesById,
   GetAllUsersAndExercisesByUserId,
   GetAllUsersAndExercisesByExerciseId,
-  CreateUserExercise
+  CreateUserExercise,
+  UpdateUserExerciseById,
+  DeleteUserExerciseById
 }
