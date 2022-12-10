@@ -16,6 +16,15 @@ const CreateDietPlan = async (req, res) => {
     throw error
   }
 }
+const GetDietPlanById = async (req, res) => {
+  try {
+    const dietPlanId = parseInt(req.params.diet_plan_id)
+    const dietPlan = await DietPlan.findByPk(dietPlanId)
+    res.send(dietPlan)
+  } catch (error) {
+    throw error
+  }
+}
 const GetDietPlanByUserId = async (req, res) => {
   try {
     const userId = parseInt(req.params.user_id)
@@ -41,6 +50,7 @@ const UpdateDietPlanById = async (req, res) => {
 module.exports = {
   GetAllDietPlans,
   CreateDietPlan,
+  GetDietPlanById,
   GetDietPlanByUserId,
   UpdateDietPlanById
 }
