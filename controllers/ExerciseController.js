@@ -34,10 +34,23 @@ const CreateExercise = async (req, res) => {
     throw error
   }
 }
+const UpdateExerciseById = async (req, res) => {
+  try {
+    const exerciseId = parseInt(req.params.exercise_id)
+    const updatedExercise = await Exercise.update(req.body, {
+      where: { id: exerciseId },
+      returning: true
+    })
+    res.send(updatedExercise)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   GetAllExercises,
   GetExerciseById,
   GetExerciseByUserId,
-  CreateExercise
+  CreateExercise,
+  UpdateExerciseById
 }
