@@ -4,7 +4,7 @@ const middleware = require('../middleware')
 
 Router.get('/', controller.GetAllDietPlans)
 Router.get('/user/:user_id', controller.GetDietPlanByUserId)
-Router.get('/:activity_id', controller.GetDietPlanById)
+Router.get('/:diet_plan_id', controller.GetDietPlanById)
 Router.post(
   '/',
   middleware.stripToken,
@@ -12,13 +12,13 @@ Router.post(
   controller.CreateDietPlan
 )
 Router.put(
-  '/:activity_id',
+  '/:diet_plan_id',
   middleware.stripToken,
   middleware.verifyToken,
   controller.UpdateDietPlanById
 )
 Router.delete(
-  '/:activity_id',
+  '/:diet_plan_id',
   middleware.stripToken,
   middleware.verifyToken,
   controller.DeleteDietPlanById
