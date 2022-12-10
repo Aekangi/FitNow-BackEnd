@@ -7,8 +7,8 @@ Router.get('/:user_id', controller.GetUserById)
 Router.post('/', controller.CreateUser)
 Router.put(
   '/:user_id',
-  middleware.stripToken,
-  middleware.verifyToken,
+  //   middleware.stripToken,
+  //   middleware.verifyToken,
   controller.UpdateUserById
 )
 Router.delete(

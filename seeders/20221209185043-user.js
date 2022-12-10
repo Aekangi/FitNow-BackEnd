@@ -8,6 +8,7 @@ module.exports = {
       username: falso.randUserName(),
       name: falso.randFullName(),
       passwordDigest: falso.randPassword({ min: 0, max: 20 }),
+      email: falso.randEmail(),
       createdAt: falso.randPastDate(),
       updatedAt: falso.randRecentDate()
     }))
