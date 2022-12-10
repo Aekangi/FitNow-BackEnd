@@ -24,7 +24,23 @@ const Login = async (req, res) => {
     throw error
   }
 }
+const Register = async (req, res) => {
+  try {
+    const { username, name, password, email } = req.body
+    let passwordDigest = await middleware.hashPassword(password)
+    const user = await User.create({
+      email,
+      passwordDigest,
+      name,
+      username
+    })
+    res.send(user)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
-  Login
+  Login,
+  Register
 }
