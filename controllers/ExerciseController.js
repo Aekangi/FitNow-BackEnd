@@ -46,11 +46,21 @@ const UpdateExerciseById = async (req, res) => {
     throw error
   }
 }
+const DeleteExerciseById = async (req, res) => {
+  try {
+    const exerciseId = parseInt(req.params.exercise_id)
+    await Exercise.destroy({ where: { id: exerciseId } })
+    res.send({ message: `Deleted exercise with an id of ${exerciseId}` })
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   GetAllExercises,
   GetExerciseById,
   GetExerciseByUserId,
   CreateExercise,
-  UpdateExerciseById
+  UpdateExerciseById,
+  DeleteExerciseById
 }
