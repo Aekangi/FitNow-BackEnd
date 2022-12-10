@@ -1,6 +1,6 @@
 const Router = require('express').Router()
-const UserRouter = require('./UserRouter')
 const AuthRouter = require('./AuthRouter')
+const UserRouter = require('./UserRouter')
 const ExerciseRouter = require('./ExerciseRouter')
 
 Router.use('/auth', AuthRouter)
