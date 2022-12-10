@@ -26,9 +26,18 @@ const GetExerciseByUserId = async (req, res) => {
     throw error
   }
 }
+const CreateExercise = async (req, res) => {
+  try {
+    const exercise = await Exercise.create(req.body)
+    res.send(exercise)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   GetAllExercises,
   GetExerciseById,
-  GetExerciseByUserId
+  GetExerciseByUserId,
+  CreateExercise
 }
