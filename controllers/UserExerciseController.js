@@ -86,6 +86,20 @@ const GetAllUsersAndExercisesByExerciseId = async (req, res) => {
     throw error
   }
 }
+const CreateUserExercise = async (req, res) => {
+  try {
+    const userId = parseInt(req.params.user_id)
+    const exerciseId = parseInt(req.params.exercise_id)
+    const userExercise = await UserExercise.create({
+      userId,
+      exerciseId,
+      ...req.body
+    })
+    res.send(userExercise)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   GetAllUserExercisesWithPk,
@@ -93,5 +107,6 @@ module.exports = {
   GetAllUsersAndExercises,
   GetAllUsersAndExercisesById,
   GetAllUsersAndExercisesByUserId,
-  GetAllUsersAndExercisesByExerciseId
+  GetAllUsersAndExercisesByExerciseId,
+  CreateUserExercise
 }
