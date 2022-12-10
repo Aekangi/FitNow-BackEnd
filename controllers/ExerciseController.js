@@ -17,8 +17,18 @@ const GetExerciseById = async (req, res) => {
     throw error
   }
 }
+const GetExerciseByUserId = async (req, res) => {
+  try {
+    const userId = parseInt(req.params.user_id)
+    const exercise = await Exercise.findAll({ where: { userId: userId } })
+    res.send(exercise)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   GetAllExercises,
-  GetExerciseById
+  GetExerciseById,
+  GetExerciseByUserId
 }
