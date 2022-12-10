@@ -112,6 +112,17 @@ const UpdateUserDietPlanById = async (req, res) => {
     throw error
   }
 }
+const DeleteUserDietPlanById = async (req, res) => {
+  try {
+    const userDietPlanId = parseInt(req.params.user_diet_plan_id)
+    await UserDietPlan.destroy({ where: { id: userDietPlanId } })
+    res.send({
+      message: `Deleted user diet plan with an id of ${userDietPlanId}`
+    })
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   GetAllUserDietPlanWithPk,
@@ -121,5 +132,6 @@ module.exports = {
   GetAllUsersAndDietPlansByUserId,
   GetAllUsersAndDietPlansByDietPlanId,
   CreateUserDietPlan,
-  UpdateUserDietPlanById
+  UpdateUserDietPlanById,
+  DeleteUserDietPlanById
 }
