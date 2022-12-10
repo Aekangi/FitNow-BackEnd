@@ -8,7 +8,17 @@ const GetAllExercises = async (req, res) => {
     throw error
   }
 }
+const GetExerciseById = async (req, res) => {
+  try {
+    const exerciseId = parseInt(req.params.exercise_id)
+    const exercise = await Exercise.findByPk(exerciseId)
+    res.send(exercise)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
-  GetAllExercises
+  GetAllExercises,
+  GetExerciseById
 }
