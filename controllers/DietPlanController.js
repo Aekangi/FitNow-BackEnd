@@ -8,7 +8,16 @@ const GetAllDietPlans = async (req, res) => {
     throw error
   }
 }
+const CreateDietPlan = async (req, res) => {
+  try {
+    const dietplans = await DietPlan.create(req.body)
+    res.send(dietplans)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
-  GetAllDietPlans
+  GetAllDietPlans,
+  CreateDietPlan
 }
