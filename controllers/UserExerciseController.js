@@ -39,9 +39,40 @@ const GetAllUsersAndExercises = async (req, res) => {
     throw error
   }
 }
+const GetAllUsersAndExercisesById = async (req, res) => {
+  try {
+    const userExerciseId = parseInt(req.params.user_exercise_id)
+    const userExercise = await UserExercise.findAll({
+      where: { id: userExerciseId }
+    })
+    res.send(userExercise)
+  } catch (error) {
+    throw error
+  }
+}
+const GetAllUsersAndExercisesByUserId = async (req, res) => {
+  try {
+    const userId = parseInt(req.params.user_id)
+    const userExerciseByUserId = await User.findAll({
+      where: { id: userId },
+      include: [
+        {
+          model: Exercise,
+          as: 'exercise_list',
+          through: { attributes: [] }
+        }
+      ]
+    })
+    res.send(userExerciseByUserId)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   GetAllUserExercisesWithPk,
   GetAllUserExercises,
-  GetAllUsersAndExercises
+  GetAllUsersAndExercises,
+  GetAllUsersAndExercisesById,
+  GetAllUsersAndExercisesByUserId
 }
