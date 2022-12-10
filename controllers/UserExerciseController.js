@@ -23,8 +23,25 @@ const GetAllUserExercises = async (req, res) => {
     throw error
   }
 }
+const GetAllUsersAndExercises = async (req, res) => {
+  try {
+    const userExercises = await User.findAll({
+      include: [
+        {
+          model: Exercise,
+          as: 'exercise_list',
+          through: { attributes: [] }
+        }
+      ]
+    })
+    res.send(userExercises)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   GetAllUserExercisesWithPk,
-  GetAllUserExercises
+  GetAllUserExercises,
+  GetAllUsersAndExercises
 }
