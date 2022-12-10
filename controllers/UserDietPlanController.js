@@ -15,7 +15,16 @@ const GetAllUserDietPlanWithPk = async (req, res) => {
     throw error
   }
 }
+const GetAllUserDietPlans = async (req, res) => {
+  try {
+    const userDietPlans = await UserDietPlan.findAll()
+    res.send(userDietPlans)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
-  GetAllUserDietPlanWithPk
+  GetAllUserDietPlanWithPk,
+  GetAllUserDietPlans
 }
