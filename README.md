@@ -17,9 +17,8 @@ It's time to take control of your health today. After a hard day at work, the la
 ### **_Getting Started_**
 
 1. `Fork` and `clone`
-2. `cd` into the directory
-3. Run `npm run setup`
-4. Run `npm run dev`
+2. Run `npm run setup`
+3. Run `npm run dev`
 
 ---
 
