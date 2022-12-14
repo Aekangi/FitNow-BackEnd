@@ -7,7 +7,7 @@ module.exports = {
       {
         photo:
           'https://www.helpguide.org/wp-content/uploads/calories-counting-diet-food-control-and-weight-loss-concept-calorie.jpg',
-        name: '7-Day Diet Meal Plan to Lose Weight: 1,500 Calories',
+        name: 'Meal Plan to Lose Weight: 1,500 Calories',
         diet_type: 'Weight Loss',
         day1: 'Dinner (507 calories): 1 serving Sheet-Pan Chicken Fajita Bowls with 1/3 cup cooked brown rice.',
         day2: 'Dinner (495 calories):   1 serving Zucchini-Chickpea Veggie Burgers with Tahini-Ranch Sauce serving Oven Sweet-Potato Fries.',
@@ -37,7 +37,7 @@ module.exports = {
       {
         photo:
           'https://ochsner-craft.s3.amazonaws.com/blog/articles/_930x524_crop_center-center_75_none/healthy-food.jpg',
-        name: 'ThePrep: Mediterranean-Diet Dinners to Comfort Me This Week',
+        name: 'ThePrep: Mediterranean-Diet Dinners',
         diet_type: 'Mediterranean-Diet',
         day1: 'Salad made with: 3/4 cup cooked bulgur, 4 ounces chopped grilled chicken breast',
         day2: '1 turkey burger, 3/4 cup roasted cauliflower and broccoli florets, 3/4 cup brown rice',
